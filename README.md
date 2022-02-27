@@ -1,29 +1,45 @@
-# README #
+# Starlify connector for mule gateway
+Exports the mulesoft api details to starlify as Service, System and Flow.
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Dependencies
+1. Java-8 +
 
-### What is this repository for? ###
+### spring-boot-starter-web
+For exposure of connector etc. on http.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+## Start
+First clone the project using below link
+https://github.com/entiros/starlify-mulesoft-anypointer-platform-connector.git
 
-### Contribution guidelines ###
+## Configuration
+Make sure proper MuleSoft api gateway and starlify url's configured properly in properties file like this
 
-* Writing tests
-* Code review
-* Other guidelines
+```
+mulesoft:
+  server:
+    url: https://anypoint.mulesoft.com
+starlify:
+  url: https://api.starlify.com
+```
 
-### Who do I talk to? ###
+Go to cloned location and run below command to start the process
+mvn clean spring-boot:run
 
-* Repo owner or admin
-* Other community or team contact
+## import mule api details to Starlify
+Use below endpoint to start importing api details to starlify as services, systems and flows
+
+```
+	Method : POST
+	URL : http://localhost:8080/submitRequest
+	Body : 
+			{
+				"starlifyKey":"starlify-api-key",
+				"apiKey":"mulesoft-api-key",
+				"networkId":"starlify-network-id-to-create-services-systems-and-flows"
+			}
+```
+
+## Output
+After successful request submission, you should be able to see all the systems and services from mulesoft in give starlify network.
