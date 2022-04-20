@@ -1,20 +1,20 @@
 # Starlify connector for mule gateway
-Exports the mulesoft api details to starlify as Service, System and Flow.
+Exports the Mulesoft API details to Starlify as systems and services.
 
 ## Dependencies
-1. Java-8 +
+ Java-8 +
 
 ### spring-boot-starter-web
-For exposure of connector etc. on http.
+For exposure of connectors etc. on http.
 
 
 
 ## Start
-First clone the project using below link
+Start by copying the project by using the link below:
 https://github.com/entiros/starlify-mulesoft-anypointer-platform-connector.git
 
 ## Configuration
-Make sure proper MuleSoft api gateway and starlify url's configured properly in properties file like this
+Make sure that the URL for MuleSoft API Gateway and Starlify is configured in your propertie file like below:
 
 ```
 mulesoft:
@@ -24,11 +24,11 @@ starlify:
   url: https://api.starlify.com
 ```
 
-Go to cloned location and run below command to start the process
+To start the process, go to copied location and run the command below: 
 mvn clean spring-boot:run
 
 ## import mule api details to Starlify
-Use below endpoint to start importing api details to starlify as services, systems and flows
+Use the endpoint below to start importing API details to Starlify as systems and flows:
 
 ```
 	Method : POST
@@ -42,4 +42,4 @@ Use below endpoint to start importing api details to starlify as services, syste
 ```
 
 ## Output
-After successful request submission, you should be able to see all the systems and services from mulesoft in give starlify network.
+After successful request submission, you should be able to see all the systems and services from Mulesoft in your Starlify network.
